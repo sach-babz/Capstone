@@ -1,0 +1,222 @@
+Multi-Agent Customer Support Assistant — Project Overview
+
+This project implements a simple but fully functional Multi-Agent Customer Support Assistant built for the Enterprise Agents track. The goal of this system is to demonstrate how multiple specialized agents can collaborate to automate a real enterprise workflow—in this case, processing customer messages, generating replies, and identifying issues that require human attention.
+
+Even with lightweight, rule-based logic, this architecture clearly represents how enterprise multi-agent systems work through specialization, coordination, and automated decision-making.
+
+What This System Does
+
+When a customer sends a message, the system processes it through four specialized agents:
+
+1. Intent Agent — Understands the Customer’s Message
+
+The Intent Agent classifies the incoming message into categories such as:
+
+Refund request
+
+Subscription cancellation
+
+Billing concern
+
+General help
+
+It also assigns an urgency level (low, medium, high), simulating real-world ticket routing and prioritization.
+
+2. Sentiment Agent — Detects Customer Emotion
+
+This agent evaluates the tone of the message and flags whether the message carries a positive, neutral, or negative sentiment.
+
+In enterprise environments, sentiment detection is crucial for:
+
+Identifying frustrated customers
+
+Prioritizing sensitive issues
+
+Improving customer experience
+
+Adding emotional context to escalation decisions
+
+This provides a more complete understanding of the customer’s state.
+
+3. Reply Agent — Generates a Professional Response
+
+Based on the intent and urgency, the Reply Agent creates a short, clear, and professional customer support reply.
+
+This reflects how companies use automated assistants to:
+
+Draft responses
+
+Acknowledge customer requests
+
+Reduce response times
+
+Maintain a consistent communication style
+
+4. Escalation Agent — Decides When Human Support Is Needed
+
+Not all issues can be solved automatically. The Escalation Agent uses:
+
+Intent
+
+Urgency
+
+Sentiment
+
+to determine whether a message should be escalated to a human support representative.
+
+For example:
+
+High urgency messages
+
+Negative sentiment combined with sensitive intent
+
+Potential refund disputes
+
+These cases receive an escalation note explaining why human review is necessary.
+
+5. Coordinator Agent — The Orchestrator
+
+The Coordinator acts as the system’s control center.
+It:
+
+Receives the user’s message
+
+Stores it in memory for context
+
+Calls all four specialized agents
+
+Combines their outputs
+
+Returns a clean, structured JSON response
+
+This highlights how multi-agent systems rely on orchestration, not isolated logic, to deliver enterprise-grade automation.
+
+Why I Built This Project
+
+Kaggle’s Enterprise Agents track emphasizes demonstrating collaboration between multiple agents applied to a real business workflow.
+Customer support was the ideal use-case because:
+
+1. It is a common and practical enterprise workflow
+
+Companies handle thousands of customer messages daily. Automating early-stage processing saves time and resources.
+
+2. The workflow naturally splits into multiple agent responsibilities
+
+Understanding the message
+
+Detecting tone
+
+Generating the response
+
+Deciding escalation
+Perfect match for a multi-agent architecture.
+
+3. Easy to evaluate and demonstrate
+
+Each agent has a clear task and predictable output, making the system transparent and easy for judges to follow.
+
+4. Lightweight but extensible
+
+The system uses simple rule-based logic, making it:
+
+Fast
+
+Safe
+
+Easy to run
+
+Yet the architecture is designed so that each agent can be replaced with an LLM, classifier, API, or enterprise tool in the future.
+
+5. Fully aligned with competition requirements
+
+The project includes:
+
+Multiple collaborating agents
+
+Clear orchestration
+
+Enterprise scenario
+
+Memory handling
+
+Test cases
+
+Structured outputs
+
+How the Multi-Agent System Works
+Step 1 — User sends a message
+
+Example:
+“I want to cancel my subscription.”
+
+Step 2 — Message is added to memory
+
+Simulates persistent conversation.
+
+Step 3 — Intent Agent classifies
+
+Intent → cancellation
+Urgency → high
+
+Step 4 — Sentiment Agent evaluates tone
+
+Example output: negative
+
+Step 5 — Reply Agent generates response
+
+“Please share your registered email so I can help cancel your subscription.”
+
+Step 6 — Escalation Agent checks conditions
+
+High urgency or negative tone → escalate
+
+Step 7 — Coordinator merges the results
+
+Returns a structured JSON response containing:
+
+intent
+
+urgency
+
+sentiment
+
+reply
+
+escalation decision
+
+Why This Project Is Useful
+1. Instant automated replies
+
+Improves customer experience and reduces wait times.
+
+2. Smart ticket triaging
+
+High urgency or negative sentiment issues are automatically flagged.
+
+3. Real-world enterprise value
+
+This architecture mirrors how many companies design customer support systems using AI.
+
+4. Scalable and extendable
+
+Each agent can evolve independently—swappable modules allow future upgrades.
+
+5. Simple but effective demonstration of multi-agent principles
+
+Judges can clearly see:
+
+Specialization
+
+Communication
+
+Decision-making
+
+Orchestration
+
+working together inside one workflow.
+
+Conclusion
+
+This project demonstrates how coordinated agents can automate an enterprise workflow—specifically customer support message handling. With dedicated agents for intent detection, sentiment analysis, reply generation, and escalation decisions, the system showcases specialization and collaboration, core principles of modern multi-agent architectures.
+
+Even as a lightweight prototype, it captures the essence of enterprise automation and forms a strong foundation for building more intelligent, LLM-powered multi-agent systems in real-world applications.
